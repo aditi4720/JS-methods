@@ -39,3 +39,33 @@ var data = [
 // 3. reduce - to accumulate total age.
 
 // Solution 105
+
+function getAge(data){
+  let sum=0;
+  for(var i=0; i<data.length; i++) {
+    if(data[i].type === 'dog') {
+      let temp = data[i].age;
+      sum += (temp*7);
+  }
+}
+return sum;
+}
+console.log(getAge(data));
+
+// fitter, map, reduce
+function getAge(data){
+  let isDog = (animal) => {
+  return animal.type === 'dog';
+}
+let dogYears = (animal) => {
+  return animal.age * 7;
+}
+let sum = (sum, animal) => {
+  return sum + animal;
+}
+let ages = data.filter(isDog).map(dogYears).reduce(sum);
+  
+console.log(ages);
+}
+getAge(data);
+

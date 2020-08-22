@@ -9,7 +9,14 @@ var student = {
   rollno : 12
 };
 
-
+console.log(student);
+delete student.rollno;
+console.log(student);
 
 
 // 3. Write a function to get the length of an object.
+let result = 0;
+  for (let key in student) {
+    result += 1;
+  }
+  console.log(`Length of student object - ${result}`); 
